@@ -1,0 +1,44 @@
+/countries:
+  description: |
+    Collection of all countries.
+    Aligned to [_ISO 3166-1 alfa-2_ standard](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2).
+    Based on [list of all countries](https://gist.github.com/keeguon/2310008).
+  get:
+    description: Fetch collection of countries
+    is: [ hasCustomerId ]
+    responses:
+      200:
+        body:
+          application/json:
+            type: !include geo/countries-collection.schema.json
+            example: !include geo/countries-collection.data.json
+
+/locales:
+  description: |
+    Collection of all locales.
+    Serving locales that are supported with translations.
+    More locales can be found [here](http://www.localeplanet.com/api/codelist.json), [here](https://docs.moodle.org/dev/Table_of_locales), [here](http://www.unicode.org/repos/cldr-aux/json/) and [here](https://github.com/iambumblehead/json-locale).
+  get:
+    description: Fetch collection of locales
+    is: [ hasCustomerId ]
+    responses:
+      200:
+        body:
+          application/json:
+            type: !include geo/locales-collection.schema.json
+            example: !include geo/locales-collection.data.json
+
+/timezones:
+  description: |
+    Collection of all timezones.
+    Based on [this source](https://github.com/dmfilipenko/timezones.json/blob/master/timezones.json).
+    However, other timezones can be found [here](https://gist.github.com/ykessler/3349960) and [here](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones).
+  get:
+    description: Fetch collection of timezones
+    is: [ hasCustomerId ]
+    responses:
+      200:
+        body:
+          application/json:
+            type: !include geo/timezones-collection.schema.json
+            example: !include geo/timezones-collection.data.json

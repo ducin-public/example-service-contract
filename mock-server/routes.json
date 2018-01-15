@@ -1,0 +1,6 @@
+{
+  "/geo/countries/*": "/countries/$1",
+  "/geo/locales/*": "/locales/$1",
+  "/geo/timezones/*": "/timezones/$1",
+  "/core/user/": "/"
+}

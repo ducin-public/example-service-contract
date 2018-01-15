@@ -1,0 +1,26 @@
+{
+  "title": "Locales",
+  "type": "array",
+  "items": {
+    "$ref": "#/definitions/Locale"
+  },
+  "definitions": {
+    "Locale": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "[A-Z-]+"
+        },
+        "name": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "name"
+      ]
+    }
+  }
+}

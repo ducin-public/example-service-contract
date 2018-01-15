@@ -1,0 +1,20 @@
+{
+  "title": "Locale",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "minLength": 5,
+      "maxLength": 2,
+      "pattern": "[A-Z]+"
+    },
+    "name": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "name"
+  ]
+}

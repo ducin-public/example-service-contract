@@ -1,0 +1,22 @@
+{
+  "name": "example-service-contract",
+  "description": "Example Service API Contract",
+  "author": "Tomasz Ducin <tomasz@ducin.it>",
+  "scripts": {
+    "mock-generate": "node mock-server/generate.js",
+    "mock-api": "node mock-server/server.js",
+    "mock-api-legacy": "json-server db.json --routes routes.json -p 3001 -d 750 --middlewares ./params-override.js",
+    "contract-typedef": "rimraf typedef && raml2ts -i contract/index.raml -o typedef",
+    "contract-typedef-manual": "json2ts contract/geo/countries-collection.schema.json > typedef/Countries.d.ts",
+    "contract-docs": "raml2html contract/index.raml > docs/index.html"
+  },
+  "dependencies": {
+    "json-schema-faker": "0.4.7",
+    "json-schema-to-typescript": "^6.0.1",
+    "json-server": "^0.14.0",
+    "raml-to-typescript": "^0.1.1",
+    "raml2html": "^7.2.0",
+    "rimraf": "^2.6.2",
+    "yargs": "^12.0.2"
+  }
+}
